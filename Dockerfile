@@ -20,7 +20,7 @@ RUN git clone https://github.com/mongodb/libbson.git && \
 COPY config /tmp/
 RUN mv /tmp/CMakeLists.txt mongo-cxx-driver/CMakeLists.txt
 
-RUN cd libbso && make install && cd .. && \
+RUN cd libbson && make install && cd .. && \
     cd mongo-c-driver && make install && cd .. && \
     cd mongo-cxx-driver && make install && cd .. && \
     cd json && make install && cd ..
