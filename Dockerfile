@@ -10,7 +10,7 @@ WORKDIR /home/tjark
 RUN sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list' && \
     apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
-RUN apt update && apt install -y ros-kinetic-navigation ros-kinetic-geographic-msgs ros-kinetic-serial ros-kinetic-rosauth git gcc nodejs libcurl3 openssl automake autoconf libtool cmake python-pip python3-pip
+RUN apt update && apt install -y ros-kinetic-navigation ros-kinetic-geographic-msgs ros-kinetic-serial ros-kinetic-rosauth git gcc nodejs libcurl3 openssl automake autoconf libtool cmake python-pip python3-pip wget
 
 RUN git clone https://github.com/mongodb/libbson.git && \
     git clone https://github.com/mongodb/mongo-c-driver.git && \
