@@ -20,10 +20,10 @@ RUN git clone https://github.com/mongodb/libbson.git && \
 COPY config /tmp/
 RUN mv /tmp/CMakeLists.txt mongo-cxx-driver/CMakeLists.txt
 
-RUN cd libbson && make install && cd .. && \
-    cd mongo-c-driver && make install && cd .. && \
-    cd mongo-cxx-driver && make install && cd .. && \
-    cd json && make install && cd ..
+RUN cd libbson && make && make install && cd .. && \
+    cd mongo-c-driver && make && make install && cd .. && \
+    cd mongo-cxx-driver && make && make install && cd .. && \
+    cd json && make && make install && cd ..
 
 RUN pip install bson && \
     pip install pymongo
