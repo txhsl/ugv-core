@@ -22,7 +22,7 @@ RUN mv /tmp/CMakeLists.txt mongo-cxx-driver/CMakeLists.txt
 
 RUN cd libbson && ./autogen.sh && ./configure && make && make install && \
     cd ../mongo-c-driver && git checkout 1.17.3 && python build/calc_release_version.py > VERSION_CURRENT && mkdir cmake-build && cd cmake-build && cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. && cmake --build . --target install && \
-    cd ../../mongo-cxx-driver && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DLIBBSON_DIR=/usr -DLIBMONGOC_DIR=/usr/local/ .. && make EP_mnmlstc_core && make && make install./configure && make && make install && \
+    cd ../../mongo-cxx-driver && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DLIBBSON_DIR=/usr -DLIBMONGOC_DIR=/usr/local/ .. && make EP_mnmlstc_core && make && make install && \
     cd ../../json && mkdir build && cd build && cmake .. && make && make install && cd ../..
 
 RUN pip install bson && \
