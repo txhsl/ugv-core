@@ -12,7 +12,7 @@ RUN sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu
 
 RUN apt update && apt install -y ros-kinetic-navigation ros-kinetic-geographic-msgs ros-kinetic-serial ros-kinetic-rosauth git gcc nodejs libcurl3 openssl
 
-RUN git clone https://github.com/mongodb/libbso.git && \
+RUN git clone https://github.com/mongodb/libbson.git && \
     git clone https://github.com/mongodb/mongo-c-driver.git && \
     git clone https://github.com/mongodb/mongo-cxx-driver.git && \
     git clone https://github.com/nlohmann/json.git
