@@ -33,6 +33,8 @@ RUN wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz && \
     mv mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb && \
     export PATH=/usr/local/mongodb4/bin:$PATH
 
+COPY ugv_data /home/tjark/ugv_data/
+
 RUN mkdir -p /var/lib/mongo && \
     mkdir -p /var/log/mongodb && \
     sudo chown tjark /var/lib/mongo && \
